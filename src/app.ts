@@ -18,6 +18,6 @@ app.use('/ping', (_req, res: Response) => {
     res.status(200).send('pong🏓');
 })
 
-app.use(quizRouter);
+app.use('/quiz', quizRouter);
 
 export default app;
