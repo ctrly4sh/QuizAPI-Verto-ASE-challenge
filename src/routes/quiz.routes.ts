@@ -1,10 +1,11 @@
 import { Router } from "express";
-import { createQuiz , getAllQuizes} from "../controllers/quiz.controller";
+import { createQuiz , getAllQuizes, submitQuiz} from "../controllers/quiz.controller";
 
 const router = Router();
 
 router.post('/createQuiz', createQuiz)
 router.get('/allQuizes', getAllQuizes)
+router.post('/:quizId/submit', submitQuiz)
 
 
 

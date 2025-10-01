@@ -3,7 +3,7 @@ import { addQuestion, getAllQuestions } from "../controllers/question.controller
 
 const router = Router();
 
-router.post('/addQuestion', addQuestion)
-router.get('/getQuestions/:quizId', getAllQuestions)
+router.post('/:quizId/question', addQuestion)
+router.get('/:quizId/question', getAllQuestions)
 
 export default router;

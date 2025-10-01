@@ -2,7 +2,7 @@ import express, {Application, Response} from "express";
 import cors from "cors";
 import helmet from "helmet";
 import quizRouter from "./routes/quiz.routes";
-
+import questionRouter from "./routes/question.routes"
 const app: Application = express();
 
 app.use(helmet());
@@ -19,5 +19,6 @@ app.use('/ping', (_req, res: Response) => {
 })
 
 app.use('/quiz', quizRouter);
+app.use('/question', questionRouter);
 
-export default app;
+export default app;                    

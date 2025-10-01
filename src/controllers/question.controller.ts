@@ -4,11 +4,10 @@ import { questionModel } from "../models/question.model";
 export const addQuestion = async (req: Request, res: Response) => {
     try {
     
-        //quiz id to add question to
         const{quizId} = req.params;
-
-         {}
         const {text, type, options, correctOptions, answerText} = req.body;
+
+        console.log('Request body', req.body);
 
         if(!text || !type ){
             return res.status(400).json({message: "Text and type are required"})
@@ -19,7 +18,7 @@ export const addQuestion = async (req: Request, res: Response) => {
             text, 
             type, 
             options, 
-            correctOptions, 
+            correctOptions,  
             answerText
         }).save();
 
@@ -38,7 +37,11 @@ export const getAllQuestions = async (req: Request, res: Response) => {
     try {
         const {quizId} = req.params;
         const questions = await questionModel.find({quizId}, '-correctOptions -answerText');
-        res.status(200).json({questions});
+        res.status(200).json({
+            message: "Questions fetched successfully",
+            questions,
+            TotalScore : questions.length
+        });
     }catch(error){
         console.error(error)
         return res.status(500).json({message: "Internal server error"})
