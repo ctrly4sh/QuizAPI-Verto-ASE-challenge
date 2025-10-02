@@ -1,49 +1,50 @@
 # Quiz API - Verto ASE Challenge
 
-## 1. 📖 Project Description
+## 📖 Project Description
 
-**This project implements a backend service for a quiz application as part of the Verto ASE Challenge.**
+This project implements a **backend service for a quiz application**, built as part of the **Verto ASE Challenge**.
 
-### Core Features:
-* Create quizzes and add questions (single choice, multiple choice, or text-based).
-* Fetch quiz questions (without exposing correct answers).
-* Submit answers and receive a calculated score.
-* Supports keyword/text matching for free-text questions.
+It provides APIs to create quizzes, add questions, fetch questions (without exposing correct answers), and submit answers with scoring logic.
 
 ---
 
-## 2. ⚙️ Setup Instructions
+## ⚙️ Setup Instructions
 
 ### Prerequisites
 
-* Node.js (>= 18)
-* MongoDB instance (local or Atlas)
-* pnpm ( preferred ) or any node package manager npm, bun, yarn, etc.
+* **Node.js** (>= 18)
+* **MongoDB** (local or Atlas cluster)
+* **pnpm** (preferred package manager) → [Install guide](https://pnpm.io/installation)
+  *(npm, yarn, or bun can also work, but `pnpm` is the default used in this project)*
+
+---
 
 ### Steps
 
-1. Clone this repo:
+1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/<ctrly4sh>/QuizAPI-Verto-ASE-challenge.git
+   git clone https://github.com/ctrly4sh/QuizAPI-Verto-ASE-challenge.git
    cd QuizAPI-Verto-ASE-challenge
    ```
-2. Install dependencies:
+
+2. **Install dependencies**
 
    ```bash
    pnpm install
    ```
-3. Create a `.env` file in the root directory:
 
+3. **Set up environment variables**
 
-   ```
-   Note: You can refer to the .env.example file in this repository for the expected environment variables.
+   * Create a `.env` file in the root directory
+   * A `.env.example` is provided as a template
 
    ```env
    PORT=3001
    MONGO_URI=mongodb+srv://<your-connection-string>
    ```
-4. Run the development server:
+
+4. **Run the development server**
 
    ```bash
    pnpm run dev
@@ -51,56 +52,55 @@
 
 ---
 
-## 3. 🧪 Running Test Cases
+## 🧪 Running Test Cases
 
 Unit tests are written with **Jest**.
 
-To run them:
+Run them with:
 
 ```bash
-npm run test
+pnpm run test
 ```
 
-Tests focus on:
+Tests cover:
 
-* Quiz submission and scoring logic
-* Single vs multiple vs text-type validation
+* Quiz submission & scoring logic
+* Validation for single / multiple / text-type questions
 
 ---
 
-## 4. 📝 Assumptions & Design Choices
+## 📝 Assumptions & Design Choices
 
-* **Options**: Max 5 per question, stored as an array (user answers are matched by index).
+* **Options**: Max 5 per question, stored as an array (user answers matched by index).
 * **Single Choice**: Exactly one correct option.
-* **Multiple Choice**: Requires selecting all correct options (order doesn’t matter).
-* **Text Questions**: Basic keyword/substring matching for scoring.
+* **Multiple Choice**: Must select all correct options (order doesn’t matter).
+* **Text Questions**: Currently strict word/substring matching.
 * **Validation**: Text answers limited to 300 chars.
-* **Database**: MongoDB was chosen for its schema flexibility and also works well with TypeScript and Node.js.
-* **Quiz → Question Relation**: Linked by `quizId` (questions don’t duplicate quiz title).
+* **Database**: MongoDB chosen for schema flexibility + Node.js/TypeScript compatibility.
+* **Quiz → Question relation**: Linked via `quizId` (no duplicate quiz titles in questions).
 
 ---
 
-## Observation and Suggestions
+## 📝 Text Answer Handling
 
-### 📝 Text Answer Handling
+* **Current Implementation**: Exact word match (simple keyword logic).
+* **Improvement Possibilities**:
 
-- In this project, **text-based answers are matched exactly by word** (simple string/keyword matching).  
-- This was chosen for simplicity and transparency.  
-- In a real-world system, better approaches could be used, such as:
-  - Using **similarity metrics** for approximate matching.  
-  - Passing the question and user’s answer to a **language model (LLM)** or NLP service for semantic evaluation by using gemini api this can be implemented  fairly easily.  
-- This design decision was intentional to keep the scope focused, but the project can be extended in these directions.  
+  * Use similarity metrics (e.g., Levenshtein distance, cosine similarity).
+  * Integrate with an **NLP/LLM API** (e.g., Gemini API) to semantically evaluate answers.
 
-### 📬 Postman Collection
+---
 
-Below is the postman collection file to view or test the API endpoints.
+## 📬 Postman Collection
 
-👉 [Download the collection here](https://github.com/ctrly4sh/QuizAPI-Verto-ASE-challenge/blob/main/assets/Quiz%20API%20-%20verto%20ASE%20Challenge.postman_collection.json)  
+A Postman collection is provided for easy testing.
+
+👉 [Download the collection here](https://github.com/ctrly4sh/QuizAPI-Verto-ASE-challenge/blob/main/assets/Quiz%20API%20-%20verto%20ASE%20Challenge.postman_collection.json)
 
 Steps to use:
-1. Open Postman  
-2. Import the above collection file  
-3. Make sure the server (`pnpm run dev`) and MongoDB are running  
-4. Run the requests directly (replace `quizId` in the requests with the one you will create and use the collection to test all the routes and features)  
 
+1. Open Postman
+2. Import the collection file
+3. Ensure MongoDB and the dev server (`pnpm run dev`) are running
+4. Replace `quizId` with the one you create, then run requests directly
 
