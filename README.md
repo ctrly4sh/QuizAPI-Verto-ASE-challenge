@@ -34,8 +34,7 @@ It provides APIs to create quizzes, add questions, fetch questions (without expo
    pnpm install
    ```
 
-3. **Set up environment variables**
-
+3. **Set up environment variables**p
    * Create a `.env` file in the root directory
    * A `.env.example` is provided as a template
 
