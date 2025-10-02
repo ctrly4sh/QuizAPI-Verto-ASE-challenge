@@ -93,7 +93,7 @@ Tests focus on:
 
 ### 📬 Postman Collection
 
-A Postman collection is provided to quickly test all API endpoints.  
+Below is the postman collection file to view or test the API endpoints.
 
 👉 [Download the collection here](https://github.com/ctrly4sh/QuizAPI-Verto-ASE-challenge/blob/main/assets/Quiz%20API%20-%20verto%20ASE%20Challenge.postman_collection.json)  
 
@@ -103,52 +103,4 @@ Steps to use:
 3. Make sure the server (`pnpm run dev`) and MongoDB are running  
 4. Run the requests directly (replace `quizId` in the requests with the one you will create and use the collection to test all the routes and features)  
 
-
-
-## 6. 📌 API Overview
-
-### Create Quiz
-
-`POST /quiz/create`
-
-```json
-{ "title": "Express JS 101" }
-```
-
-### Add Question
-
-`POST /question/addQuestion/:quizId`
-
-```json
-{
-  "text": "Which method is used to define a GET route in Express?",
-  "type": "single",
-  "options": ["app.get()", "app.post()", "app.put()"],
-  "correctOptions": [0]
-}
-```
-
-### Get Quiz Questions
-
-`GET /quiz/:quizId/questions`
-
-### Submit Answers
-
-`POST /quiz/:quizId/submit`
-
-```json
-{
-  "answers": [
-    { "questionId": "651234abcd....", "selectedOptions": [0] },
-    { "questionId": "651235efgh....", "selectedOptions": [1, 2] },
-    { "questionId": "651236ijkl....", "answerText": "It listens on a port" }
-  ]
-}
-```
-
-*Response:*
-
-```json
-{ "score": 2, "total": 3 }
-```
 
