@@ -1,0 +1,703 @@
+{
+	"info": {
+		"_postman_id": "d6ff0b42-0521-4fd5-bc36-310c1f30e9d6",
+		"name": "Quiz API - verto ASE Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45678518"
+	},
+	"item": [
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "create quiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"English 101\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/quiz/createQuiz",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"quiz",
+								"createQuiz"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "quiz created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\" : \"English 101\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3001/quiz/createQuiz",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"quiz",
+										"createQuiz"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "151"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"97-10hW50SuVEl89cSG8LA5b4wEB9k\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Oct 2025 03:43:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"quiz\": {\n        \"title\": \"English 101\",\n        \"_id\": \"68ddf4fa7a8d4e27aa036841\",\n        \"createdAt\": \"2025-10-02T03:43:54.738Z\",\n        \"updatedAt\": \"2025-10-02T03:43:54.738Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "submit quiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"answers\": [\n        //question id and answer array \n        {\"questionId\" : \"68ddf6be7a8d4e27aa036845\", \"selectedOptions\" : [0]},\n        {\"questionId\" : \"68ddf7407a8d4e27aa036847\", \"selectedOptions\" : [0,1]},\n        {\"questionId\": \"68de01507a8d4e27aa036849\", \"answerText\" : \"B\"}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/quiz/68ddf4fa7a8d4e27aa036841/submit",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"quiz",
+								"68ddf4fa7a8d4e27aa036841",
+								"submit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "submit quiz",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"answers\": [\n        //question id and answer array \n        {\"questionId\" : \"68ddf6be7a8d4e27aa036845\", \"selectedOptions\" : [0]},\n        {\"questionId\" : \"68ddf7407a8d4e27aa036847\", \"selectedOptions\" : [0,1]},\n        {\"questionId\": \"68de01507a8d4e27aa036849\", \"answerText\" : \"B\"}\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3001/quiz/68ddf4fa7a8d4e27aa036841/submit",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"quiz",
+										"68ddf4fa7a8d4e27aa036841",
+										"submit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-slE1xeGcRYuOV3MRd2bSQBhRCLM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Oct 2025 04:44:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Total Score\": 3,\n    \"Your Score\": 3\n}"
+						}
+					]
+				},
+				{
+					"name": "getAllQuizes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/quiz/allQuizes",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"quiz",
+								"allQuizes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Quizes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3001/quiz/allQuizes",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"quiz",
+										"allQuizes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "304"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"130-62ttQ5/ZYP9L4bBMTDkAvWAy2mM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Oct 2025 03:48:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"allQuizes\": [\n        {\n            \"_id\": \"68d91be75961fb27c3ba0af4\",\n            \"title\": \"Express js 101\",\n            \"createdAt\": \"2025-09-28T11:28:39.151Z\",\n            \"updatedAt\": \"2025-09-28T11:28:39.151Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68ddf4fa7a8d4e27aa036841\",\n            \"title\": \"English 101\",\n            \"createdAt\": \"2025-10-02T03:43:54.738Z\",\n            \"updatedAt\": \"2025-10-02T03:43:54.738Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "Add Question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"text\": \"A for \",\n  \"type\": \"single\",\n  //array of optins\n  \"options\": [\"apple\", \"mango\", \"banana\", \"vanilla\"],\n  //index of the correct option\n  \"correctOptions\": [0]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/question/68ddf4fa7a8d4e27aa036841/question",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"question",
+								"68ddf4fa7a8d4e27aa036841",
+								"question"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Question to a Quiz",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"text\": \"A for \",\n  \"type\": \"single\",\n  //array of optins\n  \"options\": [\"apple\", \"mango\", \"banana\", \"vanilla\"],\n  //index of the correct option\n  \"correctOptions\": [0]\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3001/question/68ddf4fa7a8d4e27aa036841/question",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"question",
+										"68ddf4fa7a8d4e27aa036841",
+										"question"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "313"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"139-TnpnnfWxo+sA+Yqwy/qOFGxxZeU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Oct 2025 03:51:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Question added successfully\",\n    \"AddedQuestion\": {\n        \"quizId\": \"68ddf4fa7a8d4e27aa036841\",\n        \"text\": \"A for\",\n        \"type\": \"single\",\n        \"options\": [\n            \"apple\",\n            \"mango\",\n            \"banana\",\n            \"vanilla\"\n        ],\n        \"correctOptions\": [\n            0\n        ],\n        \"_id\": \"68ddf6be7a8d4e27aa036845\",\n        \"createdAt\": \"2025-10-02T03:51:26.993Z\",\n        \"updatedAt\": \"2025-10-02T03:51:26.993Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get All Question",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/question/68ddf4fa7a8d4e27aa036841/question",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"question",
+								"68ddf4fa7a8d4e27aa036841",
+								"question"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get All Question",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3001/question/68ddf4fa7a8d4e27aa036841/question",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"question",
+										"68ddf4fa7a8d4e27aa036841",
+										"question"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "761"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f9-qfnKv5zvlh4YaQfRQ9Jg+tW0g8k\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Oct 2025 04:47:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Questions fetched successfully\",\n    \"questions\": [\n        {\n            \"_id\": \"68ddf6be7a8d4e27aa036845\",\n            \"quizId\": \"68ddf4fa7a8d4e27aa036841\",\n            \"text\": \"A for\",\n            \"type\": \"single\",\n            \"options\": [\n                \"apple\",\n                \"mango\",\n                \"banana\",\n                \"vanilla\"\n            ],\n            \"createdAt\": \"2025-10-02T03:51:26.993Z\",\n            \"updatedAt\": \"2025-10-02T03:51:26.993Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68ddf7407a8d4e27aa036847\",\n            \"quizId\": \"68ddf4fa7a8d4e27aa036841\",\n            \"text\": \"Select the vowels in the english alphabet\",\n            \"type\": \"multiple\",\n            \"options\": [\n                \"a\",\n                \"e\",\n                \"f\",\n                \"g\"\n            ],\n            \"createdAt\": \"2025-10-02T03:53:36.288Z\",\n            \"updatedAt\": \"2025-10-02T03:53:36.288Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68de01507a8d4e27aa036849\",\n            \"quizId\": \"68ddf4fa7a8d4e27aa036841\",\n            \"text\": \"What comes after A\",\n            \"type\": \"text\",\n            \"createdAt\": \"2025-10-02T04:36:32.249Z\",\n            \"updatedAt\": \"2025-10-02T04:36:32.249Z\",\n            \"__v\": 0\n        }\n    ],\n    \"TotalScore\": 3\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/ping",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
