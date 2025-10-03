@@ -94,7 +94,7 @@ Tests cover:
 
 A Postman collection is provided for easy testing.
 
-👉 [Download the collection here](https://github.com/ctrly4sh/QuizAPI-Verto-ASE-challenge/blob/main/assets/Quiz%20API%20-%20verto%20ASE%20Challenge.postman_collection.json)
+👉 [Download the collection here](https://github.com/ctrly4sh/QuizAPI-Verto-ASE-challenge/blob/main/assets/postman-collection.json)
 
 Steps to use:
 
